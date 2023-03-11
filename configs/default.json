@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "endpoints": [
+        {
+            "endpoint": "/posts/:id",
+            "output_encoding": "no-op",
+            "method": "GET",
+            "timeout": 15000,
+            "targets": [
+                {
+                    "method": "GET",
+                    "timeout": 0,
+                    "url_pattern": "/posts/1/comments",
+                    "host": "https://jsonplaceholder.typicode.com",
+                    "group": "comments"
+                },
+                {
+                    "method": "GET",
+                    "timeout": 15000,
+                    "url_pattern": "/posts/1",
+                    "host": "https://jsonplaceholder.typicode.com",
+                    "group": "post"
+                }
+            ]
+        }
+    ]
+}
